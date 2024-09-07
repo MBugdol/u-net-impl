@@ -1,0 +1,24 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+Before feeding the dataset into the model, it was first augmented to artificially increase its size. Data augmentation is a process aiming to reduce overfitting and improve learning rates.
+
+Data augmentation of the camouflaged animals dataset started by resizing all images and masks to the target size of 256$\times$256. Then, some predefined transformations were applied at random. These transformations were split into two groups: common transformations and input transformations.
+
+Common transformations are transformations, which may change the meaning of the image, and thus need to be applied to both the input and target image in the same way. Some examples of common transformations include:
+\begin{itemize}
+	\item horizontal flip
+	\item rotation
+	\item translation
+	\item scaling
+	\item random dropout (remove some parts of the image)
+\end{itemize}
+
+Input transformations don't alter the meaning of the input image, and thus don't need to be applied to the target mask. These operations include:
+\begin{itemize}
+	\item color jitter (adjust hue \& brightness of image)
+	\item equalize (equalizes the histogram of the image)
+\end{itemize}
+
+\end{document}

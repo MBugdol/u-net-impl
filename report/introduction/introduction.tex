@@ -1,0 +1,20 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+\newcommand{\colorsqr}[1]{
+	\fcolorbox{black}{#1}{\rule{0pt}{6pt}\rule{6pt}{0pt}}
+}
+
+The goal of this project was to train an aritifical neural network to recognize camouflaged animals in images.
+The network is a semantic segmentation model, which takes an image and classifies each pixel of the image into one of the following categories:
+\begin{itemize}
+	\item \textbf{masking background} (green \colorsqr{green}): the sections made by pixels of this category constitute the object the animal is camouflaging in,
+	\item \textbf{animal} (blue \colorsqr{blue}): the sections made by these pixels represent the hidden animal,
+	\item \textbf{attention} (white \colorsqr{white}): the sections made by pixels of this class draw attention (due to their size, shape, color...), even though they are neither part of the animal nor the camouflaging classes.
+	      An example would be a colorful flower in an image of a fox hiding in the snow,
+	\item \textbf{background} (red \colorsqr{red}): the pixel doesn't belong to any other category.
+\end{itemize}
+The model output is then taken and processed to create a mask image according to the above color-codes.
+
+\end{document}

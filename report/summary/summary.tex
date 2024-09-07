@@ -1,0 +1,16 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+The model didn't achieve what it was aiming to. The accuracy and IOU metrics show that the model isn't accurate at finding camouflaged animals in images, and it was constantly overfitting on the training set. The unsatisfactory result could be attributed to several factors.
+
+\subsection*{Parameter count}
+The model was relatively big - it had 637'000 trainable parameters. This, combined with the relatively small dataset made it impossible to sufficiently train the model to fulfill its role. This issue could possibly be solved with using a simpler model or fewer layers.
+
+\subsection*{Dataset size}
+The dataset just had not enough data for the task it was aiming for, even when adding data using augmentation. Options to mitigate this problem include expanding the dataset or using a pre-trained segmentation model and specializing it using the given set of images.
+
+\subsection*{Task complexity}
+Recognizing animals in images is a hard task in itself - with camouflaging added to the problem, it could be possible that the model created for this task just wasn't complex enough for the job. Finding details hinting at a presence of camouflaged animals is difficult for even the most advanced image recognition model, i.e. humans. The model may have not been able to find the intricate patterns revealing the presence of an animal, moreso with presence of noise (the attention class), that would have been a major confusing factor in this task.
+
+\end{document}

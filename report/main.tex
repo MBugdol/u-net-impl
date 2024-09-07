@@ -1,0 +1,48 @@
+\documentclass[12pt]{article}
+
+\usepackage[utf8]{inputenc}
+
+\usepackage{float} % add forced-here [H] placement
+\usepackage{graphicx}
+\usepackage{titling}
+\usepackage{hyperref} % links in the file
+\usepackage[section]{placeins} % forces figures to not float beyond their section
+\usepackage{subcaption} % subfigure
+\usepackage{tabularx} % tabularx = let columns space themselves
+\usepackage{xcolor} % colors
+
+\usepackage{subfiles}
+
+\graphicspath{{./images/}}
+
+\begin{document}
+
+\title{Biologically Inspired Artificial Intelligence - Project report}
+\author{Michał Bugdoł}
+\date{\today}
+
+\maketitle
+\newpage
+
+\tableofcontents
+\newpage
+
+\section{Introduction}
+\subfile{introduction/introduction.tex}
+
+\section{Dataset}
+\subfile{dataset/dataset.tex}
+
+\section{Data augmentation}
+\subfile{augmentation/augmentation.tex}
+
+\section{Model}
+\subfile{model/model.tex}
+
+\section{Training}
+\subfile{training/training.tex}
+
+\section{Summary}
+\subfile{summary/summary.tex}
+
+\end{document}
