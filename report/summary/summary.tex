@@ -2,7 +2,7 @@
 
 \begin{document}
 
-The model didn't achieve what it was aiming to. The accuracy and IOU metrics show that the model isn't accurate at finding camouflaged animals in images, and it was constantly overfitting on the training set. The unsatisfactory result could be attributed to several factors.
+The model didn't achieve what it was aiming to. The accuracy and loss metrics show that the model isn't accurate at finding camouflaged animals in images, and, judging by the trends present in the resulting data, this could hint to overfitting on the training set. The unsatisfactory result could be attributed to several factors described below.
 
 \subsection*{Parameter count}
 The model was relatively big - it had 637'000 trainable parameters. This, combined with the relatively small dataset made it impossible to sufficiently train the model to fulfill its role. This issue could possibly be solved with using a simpler model or fewer layers.

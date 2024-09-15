@@ -4,6 +4,7 @@ import os
 import torch
 from pathlib import Path
 from torch import nn, Tensor
+from torch.random import fork_rng
 from torchvision.io import read_image, ImageReadMode
 # import torchvision.transforms as T
 
@@ -61,9 +62,8 @@ class CamouflagedAnimalsDataset(nn.Module):
         mask = read_image(mask_path, ImageReadMode.RGB)
 
         if self.common_transform:
-            state = torch.get_rng_state()
-            image = self.common_transform(image)
-            torch.set_rng_state(state)
+            with(fork_rng()):
+                image = self.common_transform(image)
             mask = self.common_transform(mask)
         if self.image_transform:
             image = self.image_transform(image)

@@ -6,6 +6,7 @@
 \usepackage{graphicx}
 \usepackage{titling}
 \usepackage{hyperref} % links in the file
+\usepackage{pgfplots} % plots
 \usepackage[section]{placeins} % forces figures to not float beyond their section
 \usepackage{subcaption} % subfigure
 \usepackage{tabularx} % tabularx = let columns space themselves
@@ -14,6 +15,15 @@
 \usepackage{subfiles}
 
 \graphicspath{{./images/}}
+
+\definecolor{light-gray}{gray}{0.9}
+\newcommand{\code}[1]{
+	\colorbox{light-gray}{\texttt{#1}}
+}
+
+\pgfplotsset{table/search path=data}
+% set comma as column separator to use .csv instead of .dat
+\pgfplotstableset{col sep=comma}
 
 \begin{document}
 

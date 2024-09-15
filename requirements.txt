@@ -1,5 +1,6 @@
-lightning
-matplotlib
-torch
-torchmetrics
-torchvision
+lightning==2.4.0
+matplotlib==3.9.2
+numpy==2.1.1
+torch==2.4.1+cu124
+torchmetrics==1.4.1
+torchvision==0.19.1
